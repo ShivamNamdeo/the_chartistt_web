@@ -1,0 +1,23 @@
+.headline{
+	text-align: center;
+	padding: 2vmax;
+	margin:5vmax;
+	background-color: #fff;
+
+}
+.headline>h1{
+	font-size:4vmax;
+	background: #fff;
+	background: -webkit-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+	background: -moz-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+	background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.headline>h2{
+	font-size:2vmax;
+	font-weight: 300;
+	background: #fff;
+	color: #666;
+}

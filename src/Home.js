@@ -1,12 +1,28 @@
 import React from "react";
 import app from "./base";
+import BannerComp from "./routes/banner/BannerComp";
+import HeadLineComp from "./routes/headline/HeadLineComp";
+
+import CourseComp from "./routes/courses/CourseComp";
+
+import FooterComp from "./routes/footer/FooterComp";
+import BlogComp from "./routes/blogs/BlogComp";
+
+
 
 const Home = () => {
   return (
-    <>
-      <h1>Home</h1>
-      <button onClick={() => app.auth().signOut()}>Sign out</button>
-    </>
+  	<div>
+
+      	
+      	<BannerComp />
+      	<HeadLineComp />
+      	<CourseComp />
+      	<BlogComp/>
+
+      	<FooterComp />
+
+     </div>
   );
 };
 

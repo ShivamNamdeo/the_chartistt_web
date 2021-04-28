@@ -1,0 +1,109 @@
+.blog_grid{
+	display: grid;
+  	grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  	grid-gap: 20px;
+  	padding: 16px;
+  	background-color: #fff;
+  	
+}
+
+.blog{
+	
+	border:1px solid #4343;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: transform 0.5s;
+}
+.blog:hover{
+	box-shadow: 0px 0px 5px -3px blue;
+	transform: scale(1.04);
+}
+
+.blog>img{
+	width: 100%;
+	 /* Animation */
+}
+
+
+
+.blog_content{
+	padding: 16px;
+}
+
+.blog_content>h1{
+	font-size:25px;
+	color: #000;
+	font-weight: 300;
+	font-family: sans-serif;
+	background: #121FCF;
+	background: -webkit-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+	background: -moz-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+	background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.blog_content>h2{
+	font-size: 14px;
+	color: #000;
+	font-weight: 300;
+}
+
+.blog_content>p{
+	color: #789;
+}
+
+.blog_bottom{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.blog_bottom>h1{
+	font-size:20px;
+	color: #000;
+	font-weight: 300;
+	font-family: sans-serif;
+	background: #121FCF;
+	background: -webkit-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+	background: -moz-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+	background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.blog_bottom>button{
+
+	padding:10px;     
+	font-size:14px;
+	font-weight: bold;
+	background: #121FCF;
+	color: #fff;
+	outline-width: 0px;
+	border-width: 0px;
+	background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+	-webkit-background-clip: button;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+.blog_bottom>button:hover{
+	background: #fff;
+	color: #000;
+}
+
+.comp{
+	padding: 16px;
+}
+
+.comp>h1{
+	color: #000;
+	font-family: sans-serif;
+	background: #121FCF;
+	background: -webkit-linear-gradient(to right, #121FCF 20%, #CF1512 100%);
+	background: -moz-linear-gradient(to right, #121FCF 20%, #CF1512 100%);
+	background: linear-gradient(to right, #121FCF 30%, #CF1512 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}	

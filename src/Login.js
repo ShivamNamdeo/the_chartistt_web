@@ -2,17 +2,24 @@ import React, { useCallback, useContext } from "react";
 import { withRouter, Redirect } from "react-router";
 import app from "./base.js";
 import { AuthContext } from "./Auth.js";
+    import { GoogleLogout,GoogleLogin } from 'react-google-login';
 
 const Login = ({ history }) => {
+  
+    const { currentUser } = useContext(AuthContext);
+
+
+
   const handleLogin = useCallback(
-    async event => {
-      event.preventDefault();
-      const { email, password } = event.target.elements;
+    async response => {
+      console.log(response.profileObj);
+
+    const { email, name, } = response.profileObj;
       try {
         await app
           .auth()
-          .signInWithEmailAndPassword(email.value, password.value);
-        history.push("/");
+          .signInWithEmailAndPassword(email, name);
+        history.push("/DashBoard");
       } catch (error) {
         alert(error);
       }
@@ -20,7 +27,10 @@ const Login = ({ history }) => {
     [history]
   );
 
-  const { currentUser } = useContext(AuthContext);
+
+    const responseGoogle = (response) => {
+  console.log(response);
+}
 
   if (currentUser) {
     return <Redirect to="/" />;
@@ -29,17 +39,14 @@ const Login = ({ history }) => {
   return (
     <div>
       <h1>Log in</h1>
-      <form onSubmit={handleLogin}>
-        <label>
-          Email
-          <input name="email" type="email" placeholder="Email" />
-        </label>
-        <label>
-          Password
-          <input name="password" type="password" placeholder="Password" />
-        </label>
-        <button type="submit">Log in</button>
-      </form>
+             <GoogleLogin
+    clientId={'522766607190-mdohs51le7sicbel0kkj5j5fc0r8r7k8.apps.googleusercontent.com'}
+    onSuccess={handleLogin}
+    onFailure={responseGoogle}
+  >
+   
+    <span> Login with Google</span>
+  </GoogleLogin>
     </div>
   );
 };
